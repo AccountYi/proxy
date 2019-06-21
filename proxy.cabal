@@ -1,0 +1,78 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.2.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 0c1d5949b1eef3fb6392994a631fc99930e8891a18d7c5ebf856ad3e9723e902
+
+name:           proxy
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/proxy#readme>
+homepage:       https://github.com/githubuser/proxy#readme
+bug-reports:    https://github.com/githubuser/proxy/issues
+author:         Author name here
+maintainer:     example@example.com
+copyright:      2019 Author name here
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/proxy
+
+library
+  exposed-modules:
+      Client
+      Lib
+  other-modules:
+      Paths_proxy
+  hs-source-dirs:
+      src
+  default-extensions: NoImplicitPrelude OverloadedStrings
+  build-depends:
+      base >=4.7 && <5
+    , bytestring
+    , classy-prelude
+    , network
+    , unix >=0.3.7.3
+  default-language: Haskell2010
+
+executable proxy-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_proxy
+  hs-source-dirs:
+      app
+  default-extensions: NoImplicitPrelude OverloadedStrings
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , bytestring
+    , classy-prelude
+    , network
+    , proxy
+    , unix >=0.3.7.3
+  default-language: Haskell2010
+
+test-suite proxy-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_proxy
+  hs-source-dirs:
+      test
+  default-extensions: NoImplicitPrelude OverloadedStrings
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , bytestring
+    , classy-prelude
+    , network
+    , proxy
+    , unix >=0.3.7.3
+  default-language: Haskell2010
